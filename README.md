@@ -11,7 +11,7 @@ on Centos:7.
 ## Available image tags in Docker Hub
 
  * `cmalek/earthworm:7.9`: the latest version of the Earthworm 7.9 container
- * `cmalek/earthworm:7.9-build1`: the specific tag of latest version of the
+ * `cmalek/earthworm:7.9-build2`: the specific tag of latest version of the
    Earthworm 7.9 container.  Use this is you want to pin to a specific image of
    `cmalek/earthworm:7.9`
 
