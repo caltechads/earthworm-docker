@@ -8,7 +8,7 @@ research facilities around the world..
 `earthworm-docker` is an earthworm install in a Docker container, based
 on Centos:7.
 
-## Available mage tags in Docker Hub
+## Available image tags in Docker Hub
 
  * `cmalek/earthworm:7.9`: the latest version of the Earthworm 7.9 container
  * `cmalek/earthworm:7.9-build1`: the specific tag of latest version of the
