@@ -1,0 +1,50 @@
+#
+# q2ew - quanterra to earthworm interface
+#
+
+LINUX_FLAGS=-lutil  -lpthread -lm
+SOLARIS_FLAGS=-lutil -lsocket -lnsl -lposix4 -lthread -lm
+SPECIFIC_FLAGS=$($(PLATFORM)_FLAGS)
+
+CFLAGS = -D_REENTRANT ${GLOBALFLAGS}
+
+B = $(EW_HOME)/$(EW_VERSION)/bin
+L = $(EW_HOME)/$(EW_VERSION)/lib
+
+#IGD 2006/11/16 Moved qlib2 to libsrc
+QLIB_DIR = $(EW_HOME)/$(EW_VERSION)/src/libsrc/qlib2
+QLIB_LIB = $(QLIB_DIR)/lib_ew/libqlib2nl.a
+
+COMSERV_INC = ./comserv/include
+COMSERV_LIB = ./comserv/util
+
+CFLAGS +=  -I$(QLIB_DIR) -I$(COMSERV_INC)
+
+all: comserv q2ew
+
+comserv:  FORCE
+	@echo "Making comserv"
+	cd comserv; make -f makefile.unix
+
+SRCS = convert.c getconfig.c main.c scn_map.c cs_status.c \
+	heart.c misc_seed_utils.c die.c logo.c options.c
+
+OBJS = convert.o getconfig.o main.o scn_map.o cs_status.o \
+	heart.o misc_seed_utils.o die.o logo.o options.o
+ 
+EW_LIBS = \
+	$L/libew_mt.a
+
+# IGD 2006/11/16 Note that we use qlib2nl: no-leap-seconds version of Qlib2
+q2ew: $(OBJS); \
+	$(CC) $(CFLAGS) -o $(B)/q2ew $(COMSERV_LIB)/libutil.a $(OBJS) $(EW_LIBS) $(QLIB_LIB) -L$(COMSERV_LIB) $(SPECIFIC_FLAGS)
+
+# Clean-up rules
+clean:
+	rm -f a.out core *.o *.obj *% *~
+	(cd comserv; make -f makefile.unix clean)
+
+clean_bin:
+	rm -f $B/q2ew*
+
+FORCE:
