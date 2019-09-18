@@ -1,5 +1,5 @@
 EW_VERSION = 7.9
-BUILD = 2
+BUILD = 3
 VERSION = $(EW_VERSION)-build$(BUILD)
 
 PACKAGE = earthworm
