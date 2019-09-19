@@ -3,17 +3,15 @@
 [Earthworm](http://www.earthwormcentral.org/) is an open
 architecture, open source public software for data acquisition, processing,
 archival and distribution of seismic data.  It is widely used by seismic
-research facilities around the world..
+research facilities around the world.
 
 `earthworm-docker` is an earthworm install in a Docker container, based
-on Centos:7.
+on the `centos:7` base image.
 
 ## Available image tags in Docker Hub
 
- * `cmalek/earthworm:7.9`: the latest version of the Earthworm 7.9 container
- * `cmalek/earthworm:7.9-build3`: the specific tag of latest version of the
-   Earthworm 7.9 container.  Use this is you want to pin to a specific image of
-   `cmalek/earthworm:7.9`
+ * `caltechads/earthworm:7.9-build3`: the specific tag of latest version of the
+   Earthworm 7.9 container. 
 
 ## Caveats
 
