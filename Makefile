@@ -36,6 +36,9 @@ push: tag
 dev:
 	docker-compose up
 
+dev-detached:
+	docker-compose up -d
+
 docker-clean:
 	docker stop $(shell docker ps -a -q)
 	docker rm $(shell docker ps -a -q)

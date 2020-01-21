@@ -1,7 +1,8 @@
 FROM centos:7
-MAINTAINER joncon@uw.edu
+MAINTAINER imss-ads-staff@caltech.edu
 
 ENV EW_VER 7.9
+ENV EW_HOME /eworm/earthworm_${EW_VER}
 ENV EW_LOG /eworm/run/log/
 ENV EW_PARAMS /eworm/run/params/
 ENV EW_INSTALLATION INST_UNKNOWN
