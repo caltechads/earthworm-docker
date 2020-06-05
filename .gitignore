@@ -108,7 +108,10 @@ venv.bak/
 .DS_Store
 /*.sql
 config.codekit3
+supervisord.pid
 
 # Vim
 *.sw*
 *.bak
+
+
