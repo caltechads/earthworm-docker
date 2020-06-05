@@ -2,7 +2,7 @@ version: '3'
 
 services:
   earthworm:
-    image: earthworm:latest
+    image: caltechads/earthworm:7.9-build3
     container_name: "earthworm"
     hostname: earthworm
     ipc: private

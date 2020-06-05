@@ -3,7 +3,7 @@ BUILD = 3
 VERSION = $(EW_VERSION)-build$(BUILD)
 
 PACKAGE = earthworm
-DOCKER_REGISTRY = cmalek/earthworm
+DOCKER_REGISTRY = caltechads/earthworm
 
 #======================================================================
 
